@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
   nav: {
-    width: 300,
+    width: 240,
+    fontSize: "1.2rem",
   },
   main: {
     flex: 1,
