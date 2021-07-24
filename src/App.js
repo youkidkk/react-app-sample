@@ -10,6 +10,7 @@ import ReduxSample from "./redux/redux-sample";
 
 import {
   AppBar,
+  Drawer,
   Hidden,
   IconButton,
   Toolbar,
@@ -34,19 +35,40 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
+
+  const [state, setState] = React.useState({
+    drawerVisible: false,
+  });
+
+  function toggleDrawer(open) {
+    setState({ drawerVisible: open });
+  }
+
   return (
     <BrowserRouter>
       <CssBaseline />
       <AppBar position="fixed">
         <Toolbar>
           <Hidden lgUp>
-            <IconButton edge="start" color="inherit" aria-label="menu">
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              onClick={() => toggleDrawer(true)}
+            >
               <MenuIcon />
             </IconButton>
           </Hidden>
           <Typography variant="h6">React App Sample</Typography>
         </Toolbar>
       </AppBar>
+      <Drawer
+        anchor="left"
+        open={state.drawerVisible}
+        onClose={() => toggleDrawer(false)}
+      >
+        <Nav />
+      </Drawer>
       <Toolbar />
       <div className={classes.root}>
         <Hidden mdDown>
