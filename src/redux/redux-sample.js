@@ -1,6 +1,9 @@
 import { createStore } from "redux";
 import { useSelector, useDispatch, Provider } from "react-redux";
 
+import { Button } from "@material-ui/core";
+import React from "react";
+
 function counter(state, action) {
   switch (action.type) {
     case "INCREMENT":
@@ -29,7 +32,7 @@ function ReduxSample(props) {
     <Provider store={store}>
       <h1>Redux sample</h1>
       <Message />
-      <Button />
+      <Buttons />
     </Provider>
   );
 }
@@ -45,11 +48,11 @@ function Message(props) {
   return <p style={style}>Counter : {counter}</p>;
 }
 
-function Button(props) {
+function Buttons(props) {
   const dispatch = useDispatch();
+
   const style = {
-    fontSize: "16pt",
-    padding: "5px 10px",
+    margin: "5px 10px",
   };
 
   function decrement(e) {
@@ -61,18 +64,34 @@ function Button(props) {
   function reset(e) {
     dispatch({ type: "RESET" });
   }
+
   return (
-    <div>
-      <button style={style} onClick={decrement}>
+    <React.Fragment>
+      <Button
+        variant="contained"
+        color="primary"
+        style={style}
+        onClick={decrement}
+      >
         decrement
-      </button>
-      <button style={style} onClick={increment}>
+      </Button>
+      <Button
+        variant="contained"
+        color="primary"
+        style={style}
+        onClick={increment}
+      >
         increment
-      </button>
-      <button style={style} onClick={reset}>
+      </Button>
+      <Button
+        variant="contained"
+        color="secondary"
+        style={style}
+        onClick={reset}
+      >
         reset
-      </button>
-    </div>
+      </Button>
+    </React.Fragment>
   );
 }
 
