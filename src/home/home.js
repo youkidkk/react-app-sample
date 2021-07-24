@@ -3,14 +3,14 @@ import "./home.css";
 
 export default function Home(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="Home">
+      <header className="Home-header">
+        <img src={logo} className="Home-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Edit <code>src/Home.js</code> and save to reload.
         </p>
         <a
-          className="App-link"
+          className="Home-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
