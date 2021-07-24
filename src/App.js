@@ -1,18 +1,17 @@
 import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 import logo from "./logo.svg";
 import "./App.css";
 import "@fontsource/roboto/500.css";
 
+import Nav from "./common/nav";
 import ReduxSample from "./redux/redux-sample";
 
 import {
   AppBar,
   Hidden,
   IconButton,
-  List,
-  ListItem,
   Toolbar,
   Typography,
 } from "@material-ui/core";
@@ -50,16 +49,9 @@ function App() {
       </AppBar>
       <Toolbar />
       <div className={classes.root}>
-        <nav className={classes.nav}>
-          <List>
-            <ListItem>
-              <Link to="/">Home</Link>
-            </ListItem>
-            <ListItem>
-              <Link to="/redux">Redux</Link>
-            </ListItem>
-          </List>
-        </nav>
+        <Hidden mdDown>
+          <Nav />
+        </Hidden>
         <div className={classes.main}>
           <Route exact path="/">
             <div className="App">
