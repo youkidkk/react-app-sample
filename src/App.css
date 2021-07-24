@@ -36,12 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.Nav {
-  text-align: center;
-}
-
-.Nav > a {
-  font-size: 1.5rem;
-  margin: 1rem 0.5rem;
-}
