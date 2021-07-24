@@ -9,7 +9,8 @@
       "webRoot": "${workspaceRoot}/src",
       "sourceMapPathOverrides": {
         "webpack:///src/*": "${webRoot}/*"
-      }
+      },
+      "preLaunchTask": "npm: start"
     }
   ]
 }
