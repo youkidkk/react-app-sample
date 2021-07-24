@@ -1,11 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
-import logo from "./logo.svg";
-import "./App.css";
 import "@fontsource/roboto/500.css";
 
 import Nav from "./common/nav";
+import Home from "./home/home";
 import ReduxSample from "./redux/redux-sample";
 
 import {
@@ -71,24 +70,7 @@ function App() {
           <Nav />
         </Hidden>
         <div className={classes.main}>
-          <Route exact path="/">
-            <div className="App">
-              <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                  Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                  className="App-link"
-                  href="https://reactjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Learn React
-                </a>
-              </header>
-            </div>
-          </Route>
+          <Route exact path="/" component={Home} />
           <Route path="/redux" component={ReduxSample} />
         </div>
       </div>
