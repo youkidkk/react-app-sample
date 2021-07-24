@@ -24,10 +24,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
   },
-  nav: {
-    width: 240,
-    fontSize: "1.2rem",
-  },
   main: {
     flex: 1,
   },
