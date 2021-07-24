@@ -1,7 +1,7 @@
 import { createStore } from "redux";
 import { useSelector, useDispatch, Provider } from "react-redux";
 
-import { Button } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 import React from "react";
 
 function counter(state, action) {
@@ -30,7 +30,7 @@ let store = createStore(counter, initialState);
 function ReduxSample(props) {
   return (
     <Provider store={store}>
-      <h1>Redux sample</h1>
+      <Typography variant="h3">Redux sample</Typography>
       <Message />
       <Buttons />
     </Provider>
@@ -40,12 +40,7 @@ function ReduxSample(props) {
 function Message(props) {
   const [counter] = useSelector((state) => [state.counter]);
 
-  const style = {
-    fontSize: "20pt",
-    padding: "20px 5px",
-  };
-
-  return <p style={style}>Counter : {counter}</p>;
+  return <Typography variant="h4">Counter : {counter}</Typography>;
 }
 
 function Buttons(props) {
