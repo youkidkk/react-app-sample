@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 
 import logo from "./logo.svg";
@@ -8,6 +9,7 @@ import ReduxSample from "./redux/redux-sample";
 
 import {
   AppBar,
+  Hidden,
   IconButton,
   List,
   ListItem,
@@ -38,9 +40,11 @@ function App() {
       <CssBaseline />
       <AppBar position="fixed">
         <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
+          <Hidden lgUp>
+            <IconButton edge="start" color="inherit" aria-label="menu">
+              <MenuIcon />
+            </IconButton>
+          </Hidden>
           <Typography variant="h6">React App Sample</Typography>
         </Toolbar>
       </AppBar>
