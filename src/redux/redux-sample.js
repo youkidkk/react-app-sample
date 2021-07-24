@@ -1,6 +1,5 @@
-import { useSelector, useDispatch } from "react-redux";
-import { Provider } from "react-redux";
 import { createStore } from "redux";
+import { useSelector, useDispatch, Provider } from "react-redux";
 
 function counter(state, action) {
   switch (action.type) {
