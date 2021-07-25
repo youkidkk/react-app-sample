@@ -1,6 +1,6 @@
 import React from "react";
 
-import { MenuItem, TextField, Typography } from "@material-ui/core";
+import { MenuItem, TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 import ContentsTitle from "../common/contents-title";
