@@ -8,7 +8,7 @@ import ContentsTitle from "../common/contents-title";
 const useStyles = makeStyles((theme) => ({
   inputForm: {
     "& .MuiTextField-root": {
-      margin: "0.2rem 0.3rem",
+      margin: "0.5rem 0.3rem",
     },
   },
 }));
