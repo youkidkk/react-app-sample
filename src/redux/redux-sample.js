@@ -1,8 +1,11 @@
+import React from "react";
+
 import { createStore } from "redux";
 import { useSelector, useDispatch, Provider } from "react-redux";
 
 import { Button, Typography } from "@material-ui/core";
-import React from "react";
+
+import ContentsTitle from "../common/contents-title";
 
 function counter(state, action) {
   switch (action.type) {
@@ -30,7 +33,7 @@ let store = createStore(counter, initialState);
 function ReduxSample(props) {
   return (
     <Provider store={store}>
-      <Typography variant="h3">Redux sample</Typography>
+      <ContentsTitle title="Redux sample" />
       <Message />
       <Buttons />
     </Provider>
