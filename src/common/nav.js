@@ -22,6 +22,9 @@ function Nav(props) {
           <ListItem>
             <Link to="/redux">Redux</Link>
           </ListItem>
+          <ListItem>
+            <Link to="/form">Form</Link>
+          </ListItem>
         </List>
       </div>
     </React.Fragment>

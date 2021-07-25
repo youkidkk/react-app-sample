@@ -18,6 +18,7 @@ import {
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
+import Form from "./form/form";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -72,6 +73,7 @@ function App() {
         <div className={classes.main}>
           <Route exact path="/" component={Home} />
           <Route path="/redux" component={ReduxSample} />
+          <Route path="/form" component={Form} />
         </div>
       </div>
     </BrowserRouter>
