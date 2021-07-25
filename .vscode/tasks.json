@@ -17,6 +17,11 @@
           "beginsPattern": "Compiling...",
           "endsPattern": "Compiled .*"
         }
+      },
+      "options": {
+        "env": {
+          "BROWSER": "none"
+        }
       }
     }
   ]
