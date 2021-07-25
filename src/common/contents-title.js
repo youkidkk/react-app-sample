@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    margin: "1rem 1rem",
+    marginBottom: "2rem",
     padding: "0.5rem 1.0rem",
     borderLeft: "5px solid #000077",
     background: "#eeeeff",
