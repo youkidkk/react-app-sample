@@ -3,6 +3,8 @@ import React from "react";
 import { MenuItem, TextField, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
+import ContentsTitle from "../common/contents-title";
+
 const useStyles = makeStyles((theme) => ({
   inputForm: {
     "& *": {
@@ -16,7 +18,7 @@ export default function Form(props) {
 
   return (
     <React.Fragment>
-      <Typography variant="h3">Form sample</Typography>
+      <ContentsTitle title="Form sample" />
       <form className={classes.inputForm}>
         <div>
           <TextField id="lastName" label="姓" />
