@@ -38,7 +38,6 @@ export default function Form(props) {
           </TextField>
           <TextField id="age" label="年齢" type="number" />
         </div>
-        <div></div>
       </form>
     </React.Fragment>
   );
