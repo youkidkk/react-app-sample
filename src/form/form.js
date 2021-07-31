@@ -25,15 +25,20 @@ export default function Form(props) {
           <TextField id="firstName" label="名" />
         </div>
         <div>
-          <TextField id="age" label="年齢" type="number" />
-        </div>
-        <div>
-          <TextField id="gender" select label="性別" defaultValue="3">
+          <TextField
+            id="gender"
+            select
+            label="性別"
+            defaultValue=""
+            style={{ width: "4.0rem" }}
+          >
             <MenuItem value="1">男性</MenuItem>
             <MenuItem value="2">女性</MenuItem>
             <MenuItem value="3">他</MenuItem>
           </TextField>
+          <TextField id="age" label="年齢" type="number" />
         </div>
+        <div></div>
       </form>
     </React.Fragment>
   );
