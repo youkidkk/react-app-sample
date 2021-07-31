@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "0.5rem 1.0rem",
     borderLeft: "5px solid #000077",
     background: "#eeeeff",
+    width: "fit-content",
   },
 }));
 
