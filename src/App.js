@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     height: "calc(100% - 64px)",
   },
+  appBar: {
+    maxHeight: "64px",
+  },
   main: {
     flex: 1,
   },
@@ -44,7 +47,7 @@ function App() {
   return (
     <BrowserRouter>
       <CssBaseline />
-      <AppBar position="sticky">
+      <AppBar position="sticky" className={classes.appBar}>
         <Toolbar>
           <Hidden lgUp>
             <IconButton
