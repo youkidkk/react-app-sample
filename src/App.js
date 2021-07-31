@@ -23,10 +23,10 @@ import Form from "./form/form";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    height: "calc(100% - 64px)",
   },
   main: {
     flex: 1,
-    padding: "1rem",
   },
 }));
 
@@ -44,7 +44,7 @@ function App() {
   return (
     <BrowserRouter>
       <CssBaseline />
-      <AppBar position="fixed">
+      <AppBar position="sticky">
         <Toolbar>
           <Hidden lgUp>
             <IconButton
@@ -66,7 +66,6 @@ function App() {
       >
         <Nav />
       </Drawer>
-      <Toolbar />
       <div className={classes.root}>
         <Hidden mdDown>
           <Nav />

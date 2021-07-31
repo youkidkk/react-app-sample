@@ -1,5 +1,6 @@
 .Home {
   text-align: center;
+  height: 100%;
 }
 
 .Home-logo {
@@ -15,7 +16,9 @@
 
 .Home-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
