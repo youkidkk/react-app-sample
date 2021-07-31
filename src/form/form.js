@@ -36,7 +36,12 @@ export default function Form(props) {
             <MenuItem value="2">女性</MenuItem>
             <MenuItem value="3">他</MenuItem>
           </TextField>
-          <TextField id="age" label="年齢" type="number" />
+          <TextField
+            id="birthDay"
+            label="生年月日"
+            type="date"
+            defaultValue="1980-01-01"
+          />
         </div>
       </form>
     </React.Fragment>
