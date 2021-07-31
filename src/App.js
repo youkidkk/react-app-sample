@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "@fontsource/roboto/500.css";
 
@@ -72,9 +72,12 @@ function App() {
           <Nav />
         </Hidden>
         <div className={classes.main}>
-          <Route exact path="/" component={Home} />
-          <Route path="/redux" component={ReduxSample} />
-          <Route path="/form" component={Form} />
+          <Switch>
+            <Route path="/Home" component={Home} />
+            <Route path="/redux" component={ReduxSample} />
+            <Route path="/form" component={Form} />
+            <Route component={Home} />
+          </Switch>
         </div>
       </div>
     </BrowserRouter>
