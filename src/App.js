@@ -7,26 +7,16 @@ import Nav from "./common/nav";
 import Home from "./home/home";
 import ReduxSample from "./redux/redux-sample";
 
-import {
-  AppBar,
-  Drawer,
-  Hidden,
-  IconButton,
-  Toolbar,
-  Typography,
-} from "@material-ui/core";
+import { Drawer, Hidden } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { makeStyles } from "@material-ui/core/styles";
-import MenuIcon from "@material-ui/icons/Menu";
 import Form from "./form/form";
+import AppBar from "./common/app-bar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     height: "calc(100% - 64px)",
-  },
-  appBar: {
-    maxHeight: "64px",
   },
   main: {
     flex: 1,
@@ -47,21 +37,7 @@ function App() {
   return (
     <BrowserRouter>
       <CssBaseline />
-      <AppBar position="sticky" className={classes.appBar}>
-        <Toolbar>
-          <Hidden lgUp>
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              onClick={() => toggleDrawer(true)}
-            >
-              <MenuIcon />
-            </IconButton>
-          </Hidden>
-          <Typography variant="h6">React App Sample</Typography>
-        </Toolbar>
-      </AppBar>
+      <AppBar toggleDrawer={toggleDrawer} />
       <Drawer
         anchor="left"
         open={state.drawerVisible}
