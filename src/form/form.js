@@ -23,18 +23,18 @@ export default function Form(props) {
     birthday: "1980-01-01",
   });
 
-  function handleChange(event) {
+  const handleChange = (event) => {
     setFormState({
       ...formState,
       [event.target.name]: event.target.value,
     });
-  }
+  };
 
-  function handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
     // TODO
     console.log(formState);
-  }
+  };
 
   return (
     <React.Fragment>
