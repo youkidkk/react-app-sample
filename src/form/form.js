@@ -16,36 +16,24 @@ const useStyles = makeStyles((theme) => ({
 export default function Form(props) {
   const classes = useStyles();
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [gender, setGender] = useState("");
-  const [birthday, setBirthday] = useState("1980-01-01");
+  const [formState, setFormState] = useState({
+    firstName: "",
+    lastName: "",
+    gender: "",
+    birthday: "1980-01-01",
+  });
 
   function handleChange(event) {
-    switch (event.target.name) {
-      case "firstName":
-        setFirstName(event.target.value);
-        break;
-      case "lastName":
-        setLastName(event.target.value);
-        break;
-      case "gender":
-        setGender(event.target.value);
-        break;
-      case "birthday":
-        setBirthday(event.target.value);
-        break;
-      default:
-        break;
-    }
+    setFormState({
+      ...formState,
+      [event.target.name]: event.target.value,
+    });
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(firstName);
-    console.log(lastName);
-    console.log(gender);
-    console.log(birthday);
+    // TODO
+    console.log(formState);
   }
 
   return (
@@ -57,14 +45,14 @@ export default function Form(props) {
             name="lastName"
             label="姓"
             inputProps={{ required: true }}
-            value={lastName}
+            value={formState.lastName}
             onChange={handleChange}
           />
           <TextField
             name="firstName"
             label="名"
             inputProps={{ required: true }}
-            value={firstName}
+            value={formState.firstName}
             onChange={handleChange}
           />
         </div>
@@ -75,7 +63,7 @@ export default function Form(props) {
             label="性別"
             style={{ width: "4.0rem" }}
             inputProps={{ required: true }}
-            value={gender}
+            value={formState.gender}
             onChange={handleChange}
           >
             <MenuItem value="1">男性</MenuItem>
@@ -83,11 +71,11 @@ export default function Form(props) {
             <MenuItem value="3">他</MenuItem>
           </TextField>
           <TextField
-            name="birthDay"
+            name="birthday"
             label="生年月日"
             type="date"
             inputProps={{ required: true }}
-            value={birthday}
+            value={formState.birthday}
             onChange={handleChange}
           />
         </div>
