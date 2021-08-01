@@ -4,6 +4,7 @@ import { Button, MenuItem, TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 import ContentsTitle from "../common/contents-title";
+import ConfirmDialog from "./confirm-dialog";
 
 const useStyles = makeStyles((theme) => ({
   inputForm: {
@@ -24,6 +25,7 @@ export default function Form(props) {
   const classes = useStyles();
 
   const [formState, setFormState] = useState(initialFormState);
+  const [open, setOpen] = useState(false);
 
   const handleChange = (event) => {
     setFormState({
@@ -34,8 +36,7 @@ export default function Form(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // TODO
-    console.log(formState);
+    setOpen(true);
   };
 
   return (
@@ -87,6 +88,11 @@ export default function Form(props) {
           </Button>
         </div>
       </form>
+      <ConfirmDialog
+        formInput={formState}
+        open={open}
+        onClose={() => setOpen(false)}
+      />
     </React.Fragment>
   );
 }
