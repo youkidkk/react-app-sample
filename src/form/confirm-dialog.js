@@ -9,11 +9,7 @@ import {
 export default function ConfirmDialog(props) {
   const { firstName, lastName, gender, birthday } = props.formInput;
   return (
-    <Dialog
-      aria-labelledby="simple-dialog-title"
-      open={props.open}
-      onClose={props.onClose}
-    >
+    <Dialog open={props.open} onClose={props.onClose}>
       <DialogTitle>確認</DialogTitle>
       <DialogContent>
         <List>
