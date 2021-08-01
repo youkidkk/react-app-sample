@@ -13,15 +13,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const initialFormState = {
+  firstName: "",
+  lastName: "",
+  gender: "",
+  birthday: "1980-01-01",
+};
+
 export default function Form(props) {
   const classes = useStyles();
 
-  const [formState, setFormState] = useState({
-    firstName: "",
-    lastName: "",
-    gender: "",
-    birthday: "1980-01-01",
-  });
+  const [formState, setFormState] = useState(initialFormState);
 
   const handleChange = (event) => {
     setFormState({
