@@ -22,12 +22,15 @@ export default function Form(props) {
   const [birthday, setBirthday] = useState("1980-01-01");
 
   function handleChange(event) {
-    switch (event.target.id) {
+    switch (event.target.name) {
       case "firstName":
         setFirstName(event.target.value);
         break;
       case "lastName":
         setLastName(event.target.value);
+        break;
+      case "gender":
+        setGender(event.target.value);
         break;
       case "birthday":
         setBirthday(event.target.value);
@@ -35,10 +38,6 @@ export default function Form(props) {
       default:
         break;
     }
-  }
-
-  function handleGenderSelect(event) {
-    setGender(event.target.value);
   }
 
   function handleSubmit(event) {
@@ -55,14 +54,14 @@ export default function Form(props) {
       <form className={classes.inputForm} onSubmit={handleSubmit}>
         <div>
           <TextField
-            id="lastName"
+            name="lastName"
             label="姓"
             inputProps={{ required: true }}
             value={lastName}
             onChange={handleChange}
           />
           <TextField
-            id="firstName"
+            name="firstName"
             label="名"
             inputProps={{ required: true }}
             value={firstName}
@@ -71,20 +70,20 @@ export default function Form(props) {
         </div>
         <div>
           <TextField
-            id="gender"
+            name="gender"
             select
             label="性別"
             style={{ width: "4.0rem" }}
             inputProps={{ required: true }}
             value={gender}
-            onChange={handleGenderSelect}
+            onChange={handleChange}
           >
             <MenuItem value="1">男性</MenuItem>
             <MenuItem value="2">女性</MenuItem>
             <MenuItem value="3">他</MenuItem>
           </TextField>
           <TextField
-            id="birthDay"
+            name="birthDay"
             label="生年月日"
             type="date"
             inputProps={{ required: true }}
