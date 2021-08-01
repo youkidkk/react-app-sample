@@ -13,6 +13,19 @@ import {
 export default function ConfirmDialog(props) {
   const { firstName, lastName, gender, birthday } = props.formInput;
 
+  const items = [
+    { name: "姓名", value: `${lastName} ${firstName}` },
+    { name: "性別", value: gender },
+    { name: "生年月日", value: birthday },
+  ];
+
+  const tableRows = items.map((item) => (
+    <TableRow>
+      <TableCell>{item.name}</TableCell>
+      <TableCell>{item.value}</TableCell>
+    </TableRow>
+  ));
+
   return (
     <Dialog open={props.open} onClose={props.onClose}>
       <DialogTitle>確認</DialogTitle>
@@ -25,22 +38,7 @@ export default function ConfirmDialog(props) {
                 <TableCell>値</TableCell>
               </TableRow>
             </TableHead>
-            <TableBody>
-              <TableRow>
-                <TableCell>姓名</TableCell>
-                <TableCell>
-                  {lastName} {firstName}
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>性別</TableCell>
-                <TableCell>{gender}</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>生年月日</TableCell>
-                <TableCell>{birthday}</TableCell>
-              </TableRow>
-            </TableBody>
+            <TableBody>{tableRows}</TableBody>
           </Table>
         </TableContainer>
       </DialogContent>
