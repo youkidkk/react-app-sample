@@ -1,5 +1,7 @@
 import {
+  Button,
   Dialog,
+  DialogActions,
   DialogContent,
   DialogTitle,
   Table,
@@ -42,6 +44,18 @@ export default function ConfirmDialog(props) {
           </Table>
         </TableContainer>
       </DialogContent>
+      <DialogActions>
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={props.onConfirmCancel}
+        >
+          キャンセル
+        </Button>
+        <Button variant="contained" color="primary" onClick={props.onConfirmOk}>
+          OK
+        </Button>
+      </DialogActions>
     </Dialog>
   );
 }

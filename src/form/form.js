@@ -39,6 +39,14 @@ export default function Form(props) {
     setOpen(true);
   };
 
+  const handleConfirmOk = () => {
+    setOpen(false);
+  };
+
+  const handleConfirmCancel = () => {
+    setOpen(false);
+  };
+
   return (
     <React.Fragment>
       <ContentsTitle title="Form sample" />
@@ -92,6 +100,8 @@ export default function Form(props) {
         formInput={formState}
         open={open}
         onClose={() => setOpen(false)}
+        onConfirmOk={handleConfirmOk}
+        onConfirmCancel={handleConfirmCancel}
       />
     </React.Fragment>
   );
